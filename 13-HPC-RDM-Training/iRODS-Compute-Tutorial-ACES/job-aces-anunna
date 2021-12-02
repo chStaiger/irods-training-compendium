@@ -1,0 +1,56 @@
+#!/bin/bash
+#SBATCH --comment=773320000
+#SBATCH --time=0-0:15:00
+#SBATCH --mem=2048
+#SBATCH --cpus-per-task=1
+#SBATCH --output=output_%j.txt
+#SBATCH --error=error_output_%j.txt
+#SBATCH --job-name=aces
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=<FILL IN>
+
+module load python/3.9.4
+#module load irods-icommands/4.2.8-1
+
+#parameters for iRODS connection
+export HOST=<FILL IN>
+export PORT=1247
+export USER=<FILL IN>
+export PASSWORD=<FILL IN>
+export ZONE=aliceZone
+
+#iRODS user to share results with
+export SHARE=<FILL IN>
+
+# Some good practice on Anunna: 
+#     /lustre/scratch: fast storage & large data & accessible from every node 
+#     /tmp: very fast storage & smaller data & not accessible after run!
+
+#download reference data
+#create temprorary folder to store data, two ways (both are shared storage, so be kind to your fellow colleagues)
+export SIZETMP=`df -H /tmp --output=avail | awk 'NR==2'`
+export SIZELUSTRE=`df -H /lustre/scratch/GUESTS --output=avail | awk 'NR==2'`
+echo "Available space on /tmp "$SIZETMP
+echo "Available space on /lustre "$SIZELUSTRE
+echo 
+
+#1) On the lustre file system (for really large data)
+echo "Downloading to /lustre"
+export DIR=`mktemp -d -p /lustre/scratch/GUESTS/<user>/`
+wget -P $DIR https://ndownloader.figshare.com/files/4851460
+export DATAPATH=$DIR/4851460
+
+#2) On /tmp on the compute node itself (for small data)
+#echo "Doenloading to /tmp"
+#export DIR=`mktemp`
+#wget -P $DIR https://ndownloader.figshare.com/files/4851460
+#export DATAPATH=$DIR/48514600
+
+#if you only want to calculate tokens of a certain algorithm (Random, Single, Lee)
+export ALGO=
+
+# call the program
+python acesWorkflow.py
+
+# !!! cleanup scratch or /tmp !!! (Do not forget!)
+rm -rf $DIR

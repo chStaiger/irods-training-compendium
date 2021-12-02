@@ -1,0 +1,57 @@
+                                      XXXX
+                             #####   X:::XX
+                            ###########:::XX XXXXX
+                            ###########::::XXX:::XX
+                    XXXXXXX ###########*:::XX:::::XX
+                    X::::::X############***X**:::::X
+                   XX:::::*:#############**X***::::X
+                   X:::*****#############::X::***:X  XXXXXX
+            XXXXXXXX::***::X##############:X::::**XXXX::::XX
+            X::::::XX***::::##################:::*X**::::::X
+            X:::::::X:::::::##################:::XX****::::X
+            X:::****XX::::### XXXXXXXX   X ##::::X::****:::X
+            X:::***::X::#### X   XXXX    X #:::::X:::****::X
+            X:*****::X##### XX    XXX o  X::::::XX::::****XX
+      XXXXXXXX***:::::X:::::XX  o XXXXX  X:::::XX:::::::*XXXXXXXXX
+     XX:::::*X**::::::XX::::XX  XX   XXXX:::::XX::::::::XX*::::::X
+    XX::::::*XXX:::::::XX::::XXXX     XX::::::X::::::::XX***:::::X
+    X:::::****:X::::::::XX::::XX       XX::::XX::::::::X::***::::X
+    XX::::**:::XX::::::::X:::XXX       XXX::XX:::::::XXX:::***::XX
+     XX::***:::::XX::::::XX::XXXXXXXXXXXXX:XX:::::::X::::::***:XX
+      X::***::::::XX::::::XX::XXX     XX::XX:::::::XX::::::***XX
+      XXX:**:::::::XX::::::XX::XXXXXXXXX::XX:::::XXX:::::::*XXXXX
+         X**::::::::XX::::::XX::XX:::XX::XXX::::XX:::::::::XX:::XX
+   XXXXXXXXXX::::::::XXX::::XXXXXX:::XX::X::::XXX::::::XXXXX***:::XXX
+   X::::***:XXX::::::::XXXXXX***X::::X****XXXXX::::::XXX:::::***::::X
+   X:::***::::XXXXXX:::::XX****XXXXXXX*****XXX:::XXXXX:::::::***::::X
+   X:::***:::::::::XXX:::XX****************XXXXXXX:::::::::::****:::X
+   X:::***:::::::::::XXXXXXX**************.XXXX::::::::::::::***::XXX
+   XX::***::::::::::::XX   X*************..X  X::::::::::::::***:X
+    XXX:**::::::::::::XX   XX***********..XX  XXX::::::::::::XXXXX
+      XXXX::::::::::::X     X***********..X    XXXXXXXXXXXXXXX:XXX
+     XXXXXXXXXXXXXXXXXX     X***********..X     XXXXX::::::::***:XXXX
+    XX:***::::::::XXXX      XX*******....XX        XX:::::::::***:::X
+   XX::***::::::XXXX         XXX........XX      XX  X:::::::::***:::X
+   X:::***::::::X      X        XXXXXXXXX        XXXXX:::::::***::::X
+   X:::***::::XXXXXXXXXX      XX              X     XXXX:::::**:::::X
+   X::::***::XX:X             X               XXXX XXX:XXX::***::::XX
+   XXXX:::*XXX::XXX   XXXXX XX:X  X  X  XXXXXX   XXXX:::::XXXXXXXXX
+       XXXX::::::XXXXXX  X  X::XXXXXXXXXX XX XX    XX::::::*XXX
+         X:**::::::X    XX XX::::::::::::::X  XXXXXX:::::::**:X
+        XX***::::::XXXXXXXXX:::::::::::::::XXXXXXX::::::::***:XX
+       XX::***::::::::XXX::::::::::XXXX.X:::::XXX::::::::****::XX
+       X::::***:::::XXXXXX:::X::::::XXXXX::::XX XXX::::::***::::X
+       X::::****:::XX    X:::XXX.X.X::::::::X     XXX:::***:::::X
+       XX::::::XXXXX     XXXX::XXXXX::::::XX        XXXX*::::::XX
+        XX:::XXX            XXX:::::::::XX             XXXXXXXX
+         XXXX                 XXXXXXXXXXX                 XX
+                               X..X X..X
+                               X.XX XXXX
+                               X.X   XX
+                               XXX   XXX
+                       XXXX   X.X    X..X   XXX
+                     XXXXXXXXXX.X    X..XXXXXXXXXX
+                     X...XXXX...X    X...XX......X
+                     XXXXX..XXXXX    XXXXXXXXXXXXX
+                         XXXX             XXXXX
+                          X                 X

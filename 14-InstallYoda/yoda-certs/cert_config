@@ -1,0 +1,17 @@
+[ req ]
+default_bits = 4096
+distinguished_name = req_distinguished_name
+x509_extensions = v3_ca
+
+
+
+[ req_distinguished_name ]
+C = NL
+O = Wageningen University Research
+CN = combined.yoda.test
+
+
+
+[ v3_ca ]
+subjectAltName = DNS:combined.yoda.test
+subjectKeyIdentifier = hash
