@@ -1,0 +1,257 @@
+s3cmd info --debug s3://irods/home/alice/testdata/data1GB.img
+DEBUG: s3cmd version 2.0.1
+DEBUG: ConfigParser: Reading file '/home/staig001/.s3cfg'
+DEBUG: ConfigParser: access_key->kM...61_chars...R
+DEBUG: ConfigParser: secret_key->9X...61_chars...Q
+DEBUG: ConfigParser: host_base->sitefujiot99.wurnet.nl
+DEBUG: ConfigParser: host_bucket->sitefujiot99.wurnet.nl
+DEBUG: ConfigParser: signature_v2->False
+DEBUG: ConfigParser: check_ssl_certificate->True
+DEBUG: ConfigParser: check_ssl_hostname->True
+DEBUG: Updating Config.Config cache_file -> 
+DEBUG: Updating Config.Config follow_symlinks -> False
+DEBUG: Updating Config.Config verbosity -> 10
+DEBUG: Command: info
+DEBUG: CreateRequest: resource[uri]=/home/alice/testdata/data1GB.img
+DEBUG: ===== Send_request inner request to determine the bucket region =====
+DEBUG: CreateRequest: resource[uri]=/
+DEBUG: Using signature v4
+DEBUG: get_hostname(irods): sitefujiot99.wurnet.nl
+DEBUG: canonical_headers = host:sitefujiot99.wurnet.nl
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20220517T074410Z
+
+DEBUG: Canonical Request:
+GET
+/irods/
+location=
+host:sitefujiot99.wurnet.nl
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20220517T074410Z
+
+host;x-amz-content-sha256;x-amz-date
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+----------------------
+DEBUG: signature-v4 headers: {'x-amz-date': '20220517T074410Z', 'Authorization': 'AWS4-HMAC-SHA256 Credential=kMMMKKo9MIwFVpHE9bpA7AssAVVKPJWg00xCyxWSS2wvrucbjpDRiDPZMv1MdbZR/20220517/us-east-1/s3/aws4_request,SignedHeaders=host;x-amz-content-sha256;x-amz-date,Signature=bc90073321146dcb651c396dcf120809a6a9e5347b99ce1548dcf71585baf34a', 'x-amz-content-sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}
+DEBUG: Processing request, please wait...
+DEBUG: get_hostname(irods): sitefujiot99.wurnet.nl
+DEBUG: ConnMan.get(): creating new connection: https://sitefujiot99.wurnet.nl
+DEBUG: Using ca_certs_file None
+DEBUG: httplib.HTTPSConnection() has both context and check_hostname
+DEBUG: non-proxied HTTPSConnection(sitefujiot99.wurnet.nl, None)
+DEBUG: format_uri(): /irods/?location
+DEBUG: Sending request method_string='GET', uri='/irods/?location', headers={'x-amz-date': '20220517T074410Z', 'Authorization': 'AWS4-HMAC-SHA256 Credential=kMMMKKo9MIwFVpHE9bpA7AssAVVKPJWg00xCyxWSS2wvrucbjpDRiDPZMv1MdbZR/20220517/us-east-1/s3/aws4_request,SignedHeaders=host;x-amz-content-sha256;x-amz-date,Signature=bc90073321146dcb651c396dcf120809a6a9e5347b99ce1548dcf71585baf34a', 'x-amz-content-sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}, body=(0 bytes)
+DEBUG: ConnMan.put(): connection put back to pool (https://sitefujiot99.wurnet.nl#1)
+DEBUG: Response:
+{'data': b'<?xml version="1.0" encoding="UTF-8"?>\n        <LocationConstrai'
+         b'nt xmlns="http://s3.amazonaws.com/doc/2006-03-01/"></LocationConstra'
+         b'int>',
+ 'headers': {'connection': 'keep-alive',
+             'content-type': 'application/xml',
+             'date': 'Tue, 17 May 2022 07:44:10 GMT',
+             'server': 'nginx/1.14.1',
+             'transfer-encoding': 'chunked',
+             'x-amz-id-2': 'b8e0ad2f1240b7de95ad',
+             'x-amz-request-id': 'b8e0ad2f1240b7de95ad'},
+ 'reason': 'OK',
+ 'status': 200}
+DEBUG: ===== END send_request inner request to determine the bucket region ('us-east-1') =====
+DEBUG: Using signature v4
+DEBUG: get_hostname(irods): sitefujiot99.wurnet.nl
+DEBUG: canonical_headers = host:sitefujiot99.wurnet.nl
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20220517T074410Z
+
+DEBUG: Canonical Request:
+HEAD
+/irods/home/alice/testdata/data1GB.img
+
+host:sitefujiot99.wurnet.nl
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20220517T074410Z
+
+host;x-amz-content-sha256;x-amz-date
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+----------------------
+DEBUG: signature-v4 headers: {'x-amz-date': '20220517T074410Z', 'Authorization': 'AWS4-HMAC-SHA256 Credential=kMMMKKo9MIwFVpHE9bpA7AssAVVKPJWg00xCyxWSS2wvrucbjpDRiDPZMv1MdbZR/20220517/us-east-1/s3/aws4_request,SignedHeaders=host;x-amz-content-sha256;x-amz-date,Signature=20c98889c0f167e51392921558b1e2a89c12a08171a440a48e7142b0831a7fb7', 'x-amz-content-sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}
+DEBUG: Processing request, please wait...ip
+DEBUG: get_hostname(irods): sitefujiot99.wurnet.nl
+DEBUG: ConnMan.get(): re-using connection: https://sitefujiot99.wurnet.nl#1
+DEBUG: format_uri(): /irods/home/alice/testdata/data1GB.img
+DEBUG: Sending request method_string='HEAD', uri='/irods/home/alice/testdata/data1GB.img', headers={'x-amz-date': '20220517T074410Z', 'Authorization': 'AWS4-HMAC-SHA256 Credential=kMMMKKo9MIwFVpHE9bpA7AssAVVKPJWg00xCyxWSS2wvrucbjpDRiDPZMv1MdbZR/20220517/us-east-1/s3/aws4_request,SignedHeaders=host;x-amz-content-sha256;x-amz-date,Signature=20c98889c0f167e51392921558b1e2a89c12a08171a440a48e7142b0831a7fb7', 'x-amz-content-sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}, body=(0 bytes)
+DEBUG: ConnMan.put(): connection put back to pool (https://sitefujiot99.wurnet.nl#2)
+DEBUG: Response:
+{'data': b'',
+ 'headers': {'accept-ranges': 'bytes',
+             'connection': 'keep-alive',
+             'content-length': '1073741824',
+             'content-type': 'application/octet-stream',
+             'date': 'Tue, 17 May 2022 07:44:10 GMT',
+             'etag': '"d029b1d579e2ed5c5c818db701ef72df-16"',
+             'last-modified': 'Mon, 16 May 2022 09:01:00 GMT',
+             'server': 'nginx/1.14.1',
+             'x-amz-id-2': '1fbc860bed46bfd4136b',
+             'x-amz-request-id': '1fbc860bed46bfd4136b',
+             'x-amz-restore': 'ongoing-request="false", expiry-date="Wed, 18 '
+                              'May 2022 00:00:00 GMT"',
+             'x-amz-storage-class': 'GLACIER',
+             'x-amz-version-id': '393833343832353534323936363039393939393952473030312020343134332e31393635373136'},
+ 'reason': 'OK',
+ 'status': 200}
+s3://irods/home/alice/testdata/data1GB.img (object):
+   File size: 1073741824
+   Last mod:  Mon, 16 May 2022 09:01:00 GMT
+   MIME type: application/octet-stream
+   Storage:   GLACIER
+   MD5 sum:   d029b1d579e2ed5c5c818db701ef72df-16
+   SSE:       none
+DEBUG: CreateRequest: resource[uri]=/
+DEBUG: Using signature v4
+DEBUG: get_hostname(irods): sitefujiot99.wurnet.nl
+DEBUG: canonical_headers = host:sitefujiot99.wurnet.nl
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20220517T074410Z
+
+DEBUG: Canonical Request:
+GET
+/irods/
+policy=
+host:sitefujiot99.wurnet.nl
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20220517T074410Z
+
+host;x-amz-content-sha256;x-amz-date
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+----------------------
+DEBUG: signature-v4 headers: {'x-amz-date': '20220517T074410Z', 'Authorization': 'AWS4-HMAC-SHA256 Credential=kMMMKKo9MIwFVpHE9bpA7AssAVVKPJWg00xCyxWSS2wvrucbjpDRiDPZMv1MdbZR/20220517/us-east-1/s3/aws4_request,SignedHeaders=host;x-amz-content-sha256;x-amz-date,Signature=dbad6b5e577a33c21ab13f3942a724a6ea21b710b3ef97acf2e7b4db852083d4', 'x-amz-content-sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}
+DEBUG: Processing request, please wait...
+DEBUG: get_hostname(irods): sitefujiot99.wurnet.nl
+DEBUG: ConnMan.get(): re-using connection: https://sitefujiot99.wurnet.nl#2
+DEBUG: format_uri(): /irods/?policy
+DEBUG: Sending request method_string='GET', uri='/irods/?policy', headers={'x-amz-date': '20220517T074410Z', 'Authorization': 'AWS4-HMAC-SHA256 Credential=kMMMKKo9MIwFVpHE9bpA7AssAVVKPJWg00xCyxWSS2wvrucbjpDRiDPZMv1MdbZR/20220517/us-east-1/s3/aws4_request,SignedHeaders=host;x-amz-content-sha256;x-amz-date,Signature=dbad6b5e577a33c21ab13f3942a724a6ea21b710b3ef97acf2e7b4db852083d4', 'x-amz-content-sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}, body=(0 bytes)
+DEBUG: ConnMan.put(): connection put back to pool (https://sitefujiot99.wurnet.nl#3)
+DEBUG: Response:
+{'data': b'<?xml version="1.0" encoding="UTF-8"?><Error><Code>NoSuchBucketPolic'
+         b'y</Code><Message>The specified bucket does not have a bucket policy.'
+         b'</Message><Resource></Resource><RequestId>8f97df6b4c48a60bc394</Requ'
+         b'estId></Error>',
+ 'headers': {'connection': 'keep-alive',
+             'content-length': '218',
+             'content-type': 'application/xml',
+             'date': 'Tue, 17 May 2022 07:44:10 GMT',
+             'server': 'nginx/1.14.1',
+             'x-amz-id-2': '8f97df6b4c48a60bc394',
+             'x-amz-request-id': '8f97df6b4c48a60bc394'},
+ 'reason': 'Not Found',
+ 'status': 404}
+DEBUG: S3Error: 404 (Not Found)
+DEBUG: HttpHeader: server: nginx/1.14.1
+DEBUG: HttpHeader: date: Tue, 17 May 2022 07:44:10 GMT
+DEBUG: HttpHeader: content-type: application/xml
+DEBUG: HttpHeader: content-length: 218
+DEBUG: HttpHeader: connection: keep-alive
+DEBUG: HttpHeader: x-amz-id-2: 8f97df6b4c48a60bc394
+DEBUG: HttpHeader: x-amz-request-id: 8f97df6b4c48a60bc394
+DEBUG: ErrorXML: Code: 'NoSuchBucketPolicy'
+DEBUG: ErrorXML: Message: 'The specified bucket does not have a bucket policy.'
+DEBUG: ErrorXML: Resource: None
+DEBUG: ErrorXML: RequestId: '8f97df6b4c48a60bc394'
+   Policy:    none
+DEBUG: CreateRequest: resource[uri]=/
+DEBUG: Using signature v4
+DEBUG: get_hostname(irods): sitefujiot99.wurnet.nl
+DEBUG: canonical_headers = host:sitefujiot99.wurnet.nl
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20220517T074410Z
+
+DEBUG: Canonical Request:
+GET
+/irods/
+cors=
+host:sitefujiot99.wurnet.nl
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20220517T074410Z
+
+host;x-amz-content-sha256;x-amz-date
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+----------------------
+DEBUG: signature-v4 headers: {'x-amz-date': '20220517T074410Z', 'Authorization': 'AWS4-HMAC-SHA256 Credential=kMMMKKo9MIwFVpHE9bpA7AssAVVKPJWg00xCyxWSS2wvrucbjpDRiDPZMv1MdbZR/20220517/us-east-1/s3/aws4_request,SignedHeaders=host;x-amz-content-sha256;x-amz-date,Signature=bf396deaf3407e9ef1bd3086d70016ff1bb6852afa0f791b4ea16dbcf8ec88a9', 'x-amz-content-sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}
+DEBUG: Processing request, please wait...
+DEBUG: get_hostname(irods): sitefujiot99.wurnet.nl
+DEBUG: ConnMan.get(): re-using connection: https://sitefujiot99.wurnet.nl#3
+DEBUG: format_uri(): /irods/?cors
+DEBUG: Sending request method_string='GET', uri='/irods/?cors', headers={'x-amz-date': '20220517T074410Z', 'Authorization': 'AWS4-HMAC-SHA256 Credential=kMMMKKo9MIwFVpHE9bpA7AssAVVKPJWg00xCyxWSS2wvrucbjpDRiDPZMv1MdbZR/20220517/us-east-1/s3/aws4_request,SignedHeaders=host;x-amz-content-sha256;x-amz-date,Signature=bf396deaf3407e9ef1bd3086d70016ff1bb6852afa0f791b4ea16dbcf8ec88a9', 'x-amz-content-sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}, body=(0 bytes)
+DEBUG: ConnMan.put(): connection put back to pool (https://sitefujiot99.wurnet.nl#4)
+DEBUG: Response:
+{'data': b'<?xml version="1.0" encoding="UTF-8"?><Error><Code>NoSuchCORSConfigu'
+         b'ration</Code><Message>The CORS configuration does not exist</Message'
+         b'><Resource></Resource><RequestId>c9ff4c44974a96423b3b</RequestId></E'
+         b'rror>',
+ 'headers': {'connection': 'keep-alive',
+             'content-length': '209',
+             'content-type': 'application/xml',
+             'date': 'Tue, 17 May 2022 07:44:10 GMT',
+             'server': 'nginx/1.14.1',
+             'x-amz-id-2': 'c9ff4c44974a96423b3b',
+             'x-amz-request-id': 'c9ff4c44974a96423b3b'},
+ 'reason': 'Not Found',
+ 'status': 404}
+DEBUG: S3Error: 404 (Not Found)
+DEBUG: HttpHeader: server: nginx/1.14.1
+DEBUG: HttpHeader: date: Tue, 17 May 2022 07:44:10 GMT
+DEBUG: HttpHeader: content-type: application/xml
+DEBUG: HttpHeader: content-length: 209
+DEBUG: HttpHeader: connection: keep-alive
+DEBUG: HttpHeader: x-amz-id-2: c9ff4c44974a96423b3b
+DEBUG: HttpHeader: x-amz-request-id: c9ff4c44974a96423b3b
+DEBUG: ErrorXML: Code: 'NoSuchCORSConfiguration'
+DEBUG: ErrorXML: Message: 'The CORS configuration does not exist'
+DEBUG: ErrorXML: Resource: None
+DEBUG: ErrorXML: RequestId: 'c9ff4c44974a96423b3b'
+   CORS:      none
+DEBUG: CreateRequest: resource[uri]=/home/alice/testdata/data1GB.img
+DEBUG: Using signature v4
+DEBUG: get_hostname(irods): sitefujiot99.wurnet.nl
+DEBUG: canonical_headers = host:sitefujiot99.wurnet.nl
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20220517T074410Z
+
+DEBUG: Canonical Request:
+GET
+/irods/home/alice/testdata/data1GB.img
+acl=
+host:sitefujiot99.wurnet.nl
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20220517T074410Z
+
+host;x-amz-content-sha256;x-amz-date
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+----------------------
+DEBUG: signature-v4 headers: {'x-amz-date': '20220517T074410Z', 'Authorization': 'AWS4-HMAC-SHA256 Credential=kMMMKKo9MIwFVpHE9bpA7AssAVVKPJWg00xCyxWSS2wvrucbjpDRiDPZMv1MdbZR/20220517/us-east-1/s3/aws4_request,SignedHeaders=host;x-amz-content-sha256;x-amz-date,Signature=7751806fbfcfa94458944815b628e1498d9ee535488c93620f679ba84721baa8', 'x-amz-content-sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}
+DEBUG: Processing request, please wait...
+DEBUG: get_hostname(irods): sitefujiot99.wurnet.nl
+DEBUG: ConnMan.get(): re-using connection: https://sitefujiot99.wurnet.nl#4
+DEBUG: format_uri(): /irods/home/alice/testdata/data1GB.img?acl
+DEBUG: Sending request method_string='GET', uri='/irods/home/alice/testdata/data1GB.img?acl', headers={'x-amz-date': '20220517T074410Z', 'Authorization': 'AWS4-HMAC-SHA256 Credential=kMMMKKo9MIwFVpHE9bpA7AssAVVKPJWg00xCyxWSS2wvrucbjpDRiDPZMv1MdbZR/20220517/us-east-1/s3/aws4_request,SignedHeaders=host;x-amz-content-sha256;x-amz-date,Signature=7751806fbfcfa94458944815b628e1498d9ee535488c93620f679ba84721baa8', 'x-amz-content-sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}, body=(0 bytes)
+DEBUG: ConnMan.put(): connection put back to pool (https://sitefujiot99.wurnet.nl#5)
+DEBUG: Response:
+{'data': b'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><AccessContro'
+         b'lPolicy><Owner><ID>62d0579851ea12833f3cbeb134c7a78879bab91d84fac55bd'
+         b'567119f3e213fef</ID><DisplayName>irodss3user</DisplayName></Owner><A'
+         b'ccessControlList><Grant><Grantee xmlns:xsi="http://www.w3.org/2001/X'
+         b'MLSchema-instance" xsi:type="CanonicalUser"><ID>62d0579851ea12833f3c'
+         b'beb134c7a78879bab91d84fac55bd567119f3e213fef</ID><DisplayName>irodss'
+         b'3user</DisplayName></Grantee><Permission>FULL_CONTROL</Permission></'
+         b'Grant></AccessControlList></AccessControlPolicy>',
+ 'headers': {'connection': 'keep-alive',
+             'content-type': 'application/xml',
+             'date': 'Tue, 17 May 2022 07:44:10 GMT',
+             'server': 'nginx/1.14.1',
+             'transfer-encoding': 'chunked',
+             'x-amz-id-2': '52dcc4a17a468602ed78',
+             'x-amz-request-id': '52dcc4a17a468602ed78',
+             'x-amz-version-id': '393833343832353534323936363039393939393952473030312020343134332e31393635373136'},
+ 'reason': 'OK',
+ 'status': 200}
+   ACL:       irodss3user: FULL_CONTROL
+
