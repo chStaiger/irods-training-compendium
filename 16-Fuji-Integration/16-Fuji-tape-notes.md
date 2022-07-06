@@ -5,11 +5,11 @@
 - Config
 
 ```
-staig001@scomp1447:~$ cat .s3cfg
-access_key = kMMMKKo9MIwFVpHE9bpA7AssAVVKPJWg00xCyxWSS2wvrucbjpDRiDPZMv1MdbZR
-secret_key = 9XIBzdH8BmBr5X6xyY0qZkYsK003iU5g48SNR2q71Xp6Saxx4qfCZ1JshMJCyeMQ
-host_base = sitefujiot99.wurnet.nl
-host_bucket = sitefujiot99.wurnet.nl
+cat .s3cfg
+access_key = <blablabla>
+secret_key = <bla>
+host_base = <hostname.or.ip>
+host_bucket = <hostname.or.ip/bucketname>
 signature_v2 = False
 check_ssl_certificate = True
 check_ssl_hostname = True
