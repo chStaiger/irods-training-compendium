@@ -72,7 +72,7 @@ session = iRODSSession(host='sara-alice.grid.surfsara.nl',
 Note that you will need to change the username to the one you are given. Throughout this course we will assume you are `irods-user1`. 
 
 #### In some cases your iRODS server will use SSL encryption for data transfers and interacting with the server. In that case you need to provide more information to setup a session. 
-You will find all of the parameters in a file called irods_environment.json (ask you friendly iRODS administrator). Please store that file under /\<Path to your home directory\>/.irods/irods_environment.json
+You will find all of the parameters in a file called irods_environment.json (ask your friendly iRODS administrator). Please store that file under /\<Path to your home directory\>/.irods/irods_environment.json
 You can then create the session as follows:
 
 ```py
