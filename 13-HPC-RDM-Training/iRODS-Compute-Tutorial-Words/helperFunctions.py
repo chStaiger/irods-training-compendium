@@ -4,53 +4,41 @@
 @author: Christine Staiger
 """
 import os
+from pathlib import Path
 
-#wordcount
-from collections import Counter
-import json
-import string
-
-#irods
+# irods
 import irods.keywords as kw
 
-#create directory if it does not exist already
+
+# create directory if it does not exist already
 def ensure_dir(directory):
     if not os.path.exists(directory):
         os.makedirs(directory)
+        
 
-#wordcount program
-#simple wordcount function which counts every instance of a word, note case sensitive
-def wordcount(dataFiles, resultsDir):
-    print(dataFiles)
-    print(resultsDir)
-    words = []
-    for path in dataFiles:
-        with open(path) as f:
-            text = f.read().split()
-        newWords = [''.join(char for char in word
-             if char not in string.punctuation) for word in text]
-        words.extend(newWords)
-    print(len(words))
+# read all data from folder and concatenate into one string
+def files_to_text(dir):
+    text = ""
+    for child in Path(dir).iterdir():
+        if child.is_file():
+            with open(child, 'r') as f:
+                text = text + f.read()
+    return text
 
-    numWords = Counter(words)
 
-    #store results
-    resultsFile=resultsDir+"/resultswordcount.dat"
-    with open(resultsFile, 'w') as file:
-        file.write(json.dumps(numWords))
-    return resultsFile
-
-#irods helper functions
-def iParseQuery(queryResults):
+# irods helper functions
+def parse_query(query_results):
     """
-    Parse a query that fetched Collection.name and DataObject.name; the function creates the full iRODS path of all yielded files.
+    Parse a query that fetched Collection.name and DataObject.name;
+    the function creates the full iRODS path of all yielded files.
 
     Usage example:
     iParseQuery(sess.query(Collection.name, DataObject.name))
-    iParseQuery(sess.query(Collection.name, DataObject.name).filter(DataObjectMeta.name == 'author' and DataObjectMeta.value == 'Lewis Carroll'))
+    iParseQuery(sess.query(Collection.name, DataObject.name).filter(
+                DataObjectMeta.name == 'author' and DataObjectMeta.value == 'Lewis Carroll'))
     """
-    iPaths = []
-    results = queryResults.get_results()
+    irods_paths = []
+    results = query_results.get_results()
 
     for item in results:
         for k in item.keys():
@@ -60,10 +48,11 @@ def iParseQuery(queryResults):
                 coll = item[k]
             else:
                 continue
-        iPaths.append(coll+'/'+name)
-    return iPaths
+        irods_paths.append(coll+'/'+name)
+    return irods_paths
 
-def iGetList(sess, iPaths, destFolder):
+
+def get_data(sess, irods_paths, dest_folder):
     """
     Downloads a list of data objects from iRODS and saves them in the destination folder.
     Watch out: Data will be overwritten!
@@ -75,14 +64,15 @@ def iGetList(sess, iPaths, destFolder):
     iPaths  - List of full iRODS paths to data objects
     destFolder - Location, unix filesystem
     """
-    ensure_dir(destFolder)
-    print("Write to: ", destFolder)
-    for iPath in iPaths:
-        buff = sess.data_objects.open(iPath, 'r').read()
-        with open(destFolder+'/'+os.path.basename(iPath), 'wb') as f:
+    ensure_dir(dest_folder)
+    print("Write to: ", dest_folder)
+    for path in irods_paths:
+        buff = sess.data_objects.open(path, 'r').read()
+        with open(dest_folder+'/'+os.path.basename(path), 'wb') as f:
             f.write(buff)
 
-def iPutFile(sess, fileName, iPath):
+
+def put_file(sess, filename, irods_dest):
     """
     Uploads a file to iRODS and returns the iRODS data object.
     Watch out: Returns an error if data object already exists.
@@ -97,18 +87,13 @@ def iPutFile(sess, fileName, iPath):
 
     options = {kw.REG_CHKSUM_KW: ''}
 
-    with open(fileName, 'r') as f:
-        content = f.read()
-
-    obj = sess.data_objects.create(iPath)
-    with obj.open('w', options) as obj_desc:
-        obj_desc.write(content)
-
-    obj = sess.data_objects.get(iPath)
+    sess.data_objects.put(filename, irods_dest, **options)
+    obj = sess.data_objects.get(irods_dest)
 
     return obj
 
-def iLsColl(sess, iPath):
+
+def ils_coll(sess, irods_path):
     """
     Lists the whole iRODS collection recursively.
     Exanple usage:
@@ -119,8 +104,7 @@ def iLsColl(sess, iPath):
     iPath   - Full iRODS paths to the iRODS collection
     """
 
-    iColl = sess.collections.get(iPath)
-    for srcColl, subColls, objs in iColl.walk():
-        print("-C "+srcColl.path)
+    coll = sess.collections.get(irods_path)
+    for src_coll, _, objs in coll.walk():
+        print("-C "+src_coll.path)
         print("\n".join(["    "+obj.path for obj in objs]))
-
